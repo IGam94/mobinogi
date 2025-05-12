@@ -56,6 +56,13 @@ export default function HomeworkBoard() {
 
       // count 기반 태스크 처리
       if (task.maxCount) {
+        if (task.count != null && task.count >= task.maxCount) {
+          return {
+            ...task,
+            count: 0,
+            done: false,
+          };
+        }
         const newCount = (task.count ?? 0) + 1;
         return {
           ...task,
