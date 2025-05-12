@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, Button, Tabs, Tab } from "@mui/material";
+import { Card, CardContent, Button } from "@mui/material";
 import CheckIcon from "@mui/icons-material/CheckCircle";
 import CloseIcon from "@mui/icons-material/RadioButtonUnchecked";
 import clsx from "clsx";
