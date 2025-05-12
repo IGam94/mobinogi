@@ -83,8 +83,8 @@ export default function GameHomeworkBoard() {
   const [selectedDay, setSelectedDay] = useState<DayKey>("월");
   const [tasks, setTasks] = useState<TaskMap>(dummyData);
 
-  const toggleDone = (day: string, id: number) => {
-    const updatedTasks = {
+  const toggleDone = (day: DayKey, id: number) => {
+    const updatedTasks: TaskMap = {
       ...tasks,
       [day]: tasks[day].map((task) => (task.id === id ? { ...task, done: !task.done } : task)),
     };
