@@ -28,11 +28,11 @@ const weeklyTasks: Task[] = [
 
 const dailyTasks: Task[] = [
   { id: 101, name: "물물 교환", done: false },
-  { id: 102, name: "결계 2회", done: false, count: 0, maxCount: 2 },
-  { id: 103, name: "검은 구멍 3회", done: false, count: 0, maxCount: 3 },
-  { id: 104, name: "오전 알바", done: false },
-  { id: 105, name: "오후 알바", done: false },
-  { id: 1056, name: "캐시샵(무료템/보석)", done: false },
+  { id: 102, name: "오전 알바", done: false },
+  { id: 103, name: "오후 알바", done: false },
+  { id: 104, name: "캐시샵(무료템/보석)", done: false },
+  { id: 105, name: "결계 2회", done: false, count: 0, maxCount: 2 },
+  { id: 106, name: "검은 구멍 3회", done: false, count: 0, maxCount: 3 },
 ];
 
 const generateInitialTasks = (): AllTasks => {
@@ -112,7 +112,7 @@ export default function HomeworkBoard() {
 
   return (
     <div className="max-w-4xl mx-auto mt-2 px-4">
-      <h1 className="text-2xl font-bold mb-4 text-center">🧙 마비노기 숙제표</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">🧙 마비노기 모바일 숙제표</h1>
 
       <div className="flex justify-end gap-2 mb-4">
         <Button variant="outlined" onClick={resetWeekly} color="primary">
@@ -126,14 +126,14 @@ export default function HomeworkBoard() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {characters.map((char) => (
           <div key={char}>
-            <h2 className="text-lg font-semibold text-center mb-2 flex items-center justify-center">
-              <span className="mr-2">{char}</span>
+            <h2 className="relative text-lg font-semibold text-center mb-2 flex items-center justify-center">
+              <span className="">{char}</span>
               {/* 상태에 따라 아이콘 색상 변경 */}
-              <span className={clsx("w-3 h-3 rounded-full", getCharacterStatus(char))}></span>
+              <span className={clsx("absolute ml-16 w-3 h-3 rounded-full", getCharacterStatus(char))}></span>
             </h2>
             {days.map((day) => (
               <div key={day} className="mb-4">
-                <div className="font-medium text-gray-600 mb-1">{day}</div>
+                <div className="text-center font-bold text-gray-600 mb-1">{day}</div>
                 <div className="space-y-2">
                   {tasks[char][day]?.map((task) => (
                     <Card
